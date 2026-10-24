@@ -1,0 +1,36 @@
+{
+    "resource_pack_name": "thirsty",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "thirsty_flask": {
+            "textures": "textures/items/flask"
+        },
+        "thirsty_purified_water_bottle": {
+            "textures": "textures/items/purified_water_bottle"
+        },
+        "thirsty_dirty_flask_1": {
+            "textures": "textures/items/dirty_flask_1"
+        },
+        "thirsty_dirty_flask_2": {
+            "textures": "textures/items/dirty_flask_2"
+        },
+        "thirsty_dirty_flask_3": {
+            "textures": "textures/items/dirty_flask_3"
+        },
+        "thirsty_dirty_flask_4": {
+            "textures": "textures/items/dirty_flask_4"
+        },
+        "thirsty_clean_flask_1": {
+            "textures": "textures/items/clean_flask_1"
+        },
+        "thirsty_clean_flask_2": {
+            "textures": "textures/items/clean_flask_2"
+        },
+        "thirsty_clean_flask_3": {
+            "textures": "textures/items/clean_flask_3"
+        },
+        "thirsty_clean_flask_4": {
+            "textures": "textures/items/clean_flask_4"
+        }
+    }
+}

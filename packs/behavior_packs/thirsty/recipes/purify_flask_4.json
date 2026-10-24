@@ -1,0 +1,13 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "thirsty:purify_flask_4"
+        },
+        "tags": [
+            "furnace"
+        ],
+        "input": "thirsty:dirty_flask_4",
+        "output": "thirsty:clean_flask_4"
+    }
+}

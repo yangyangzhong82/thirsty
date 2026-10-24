@@ -11,7 +11,7 @@ option_end()
 -- add_requires("levilamina x.x.x") for a specific version
 -- add_requires("levilamina develop") to use develop version
 -- please note that you should add bdslibrary yourself if using dev version
-add_requires("levilamina", {configs = {target_type = get_config("target_type")}})
+add_requires("levilamina 26.51.5", {configs = {target_type = get_config("target_type")}})
 
 add_requires("levibuildscript")
 
@@ -19,9 +19,10 @@ if not has_config("vs_runtime") then
     set_runtimes("MD")
 end
 
-target("my-mod") -- Change this to your mod name.
+target("thirsty")
+    set_version("0.2.1")
     add_rules("@levibuildscript/linkrule")
-    add_rules("@levibuildscript/modpacker")
+    add_rules("@levibuildscript/modpacker", {modVersion = "0.2.1"})
     if is_plat("windows") then
         add_defines("NOMINMAX", "UNICODE", "_HAS_CXX23=1")
         set_exceptions("none") -- To avoid conflicts with /EHa.
@@ -48,10 +49,18 @@ target("my-mod") -- Change this to your mod name.
     add_headerfiles("src/**.h")
     add_files("src/**.cpp")
     add_includedirs("src")
-    if is_config("target_type", "server") then
-    --  add_includedirs("src-server")
-    --  add_files("src-server/**.cpp")
-    else
-    --  add_includedirs("src-client")
-    --  add_files("src-client/**.cpp")
+    set_targetdir("build/$(plat)/$(arch)/$(mode)/" .. (get_config("target_type") or "server"))
+    set_objectdir("build/.objs/" .. (get_config("target_type") or "server"))
+    if is_config("target_type", "client") then
+        add_includedirs("src-client")
+        add_headerfiles("src-client/**.h")
+        add_files("src-client/**.cpp")
     end
+    after_build(function(target)
+        local outputdir = path.join(os.projectdir(), "bin", target:name())
+        for _, kind in ipairs({"behavior_packs", "resource_packs"}) do
+            local destination = path.join(outputdir, kind)
+            os.mkdir(destination)
+            os.cp(path.join(os.projectdir(), "packs", kind, "thirsty"), destination)
+        end
+    end)

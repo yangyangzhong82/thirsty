@@ -1,0 +1,29 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Thirsty 饮水资源",
+        "description": "水壶与纯净水瓶的图标和名称。",
+        "uuid": "ba3a74d8-a34e-4a85-a5ba-d2d716568171",
+        "version": [
+            0,
+            2,
+            1
+        ],
+        "min_engine_version": [
+            1,
+            21,
+            90
+        ]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "482c4b4c-4a9a-40e2-b79c-d8b9b8d239c9",
+            "version": [
+                0,
+                2,
+                1
+            ]
+        }
+    ]
+}

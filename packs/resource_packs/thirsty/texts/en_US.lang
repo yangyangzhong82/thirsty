@@ -1,0 +1,10 @@
+item.thirsty:flask.name=Empty Flask
+item.thirsty:purified_water_bottle.name=Purified Water Bottle
+item.thirsty:dirty_flask_1.name=Dirty Water Flask (1/4)
+item.thirsty:dirty_flask_2.name=Dirty Water Flask (2/4)
+item.thirsty:dirty_flask_3.name=Dirty Water Flask (3/4)
+item.thirsty:dirty_flask_4.name=Dirty Water Flask (4/4)
+item.thirsty:clean_flask_1.name=Purified Water Flask (1/4)
+item.thirsty:clean_flask_2.name=Purified Water Flask (2/4)
+item.thirsty:clean_flask_3.name=Purified Water Flask (3/4)
+item.thirsty:clean_flask_4.name=Purified Water Flask (4/4)

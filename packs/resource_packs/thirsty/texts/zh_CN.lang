@@ -1,0 +1,10 @@
+item.thirsty:flask.name=空水壶
+item.thirsty:purified_water_bottle.name=纯净水瓶
+item.thirsty:dirty_flask_1.name=水壶 · 脏水 1/4
+item.thirsty:dirty_flask_2.name=水壶 · 脏水 2/4
+item.thirsty:dirty_flask_3.name=水壶 · 脏水 3/4
+item.thirsty:dirty_flask_4.name=水壶 · 脏水 4/4
+item.thirsty:clean_flask_1.name=水壶 · 净水 1/4
+item.thirsty:clean_flask_2.name=水壶 · 净水 2/4
+item.thirsty:clean_flask_3.name=水壶 · 净水 3/4
+item.thirsty:clean_flask_4.name=水壶 · 净水 4/4
