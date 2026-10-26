@@ -1,0 +1,29 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "thirsty:filter_flask_2"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "thirsty:dirty_flask_2"
+            },
+            {
+                "item": "thirsty:charcoal_filter"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "thirsty:charcoal_filter"
+            }
+        ],
+        "result": [
+            {
+                "item": "thirsty:slightly_dirty_flask_2"
+            }
+        ]
+    }
+}

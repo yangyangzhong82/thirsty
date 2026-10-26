@@ -5,9 +5,11 @@
             "identifier": "thirsty:purify_flask_1"
         },
         "tags": [
-            "furnace"
+            "furnace",
+            "campfire",
+            "soul_campfire"
         ],
         "input": "thirsty:dirty_flask_1",
-        "output": "thirsty:clean_flask_1"
+        "output": "thirsty:slightly_dirty_flask_1"
     }
 }

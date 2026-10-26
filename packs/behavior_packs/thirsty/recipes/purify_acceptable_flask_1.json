@@ -1,0 +1,15 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "thirsty:purify_acceptable_flask_1"
+        },
+        "tags": [
+            "furnace",
+            "campfire",
+            "soul_campfire"
+        ],
+        "input": "thirsty:acceptable_flask_1",
+        "output": "thirsty:clean_flask_1"
+    }
+}

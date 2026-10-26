@@ -20,9 +20,9 @@ if not has_config("vs_runtime") then
 end
 
 target("thirsty")
-    set_version("0.2.1")
+    set_version("0.3.0")
     add_rules("@levibuildscript/linkrule")
-    add_rules("@levibuildscript/modpacker", {modVersion = "0.2.1"})
+    add_rules("@levibuildscript/modpacker", {modVersion = "0.3.0"})
     if is_plat("windows") then
         add_defines("NOMINMAX", "UNICODE", "_HAS_CXX23=1")
         set_exceptions("none") -- To avoid conflicts with /EHa.

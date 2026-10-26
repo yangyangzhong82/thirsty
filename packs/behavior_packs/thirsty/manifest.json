@@ -2,12 +2,12 @@
     "format_version": 2,
     "header": {
         "name": "Thirsty 饮水物品",
-        "description": "水壶、纯净水瓶与净化配方；配合 Thirsty LeviLamina 模组使用。",
+        "description": "四级水质、水壶与逐级净化配方；配合 Thirsty LeviLamina 模组使用。",
         "uuid": "c8a106ad-4acf-42df-9c01-cc3fbb847d50",
         "version": [
             0,
-            2,
-            1
+            3,
+            3
         ],
         "min_engine_version": [
             1,
@@ -21,8 +21,8 @@
             "uuid": "9bb369af-0f11-4216-b3d3-c2979d7083e0",
             "version": [
                 0,
-                2,
-                1
+                3,
+                3
             ]
         }
     ],
@@ -31,8 +31,8 @@
             "uuid": "ba3a74d8-a34e-4a85-a5ba-d2d716568171",
             "version": [
                 0,
-                2,
-                1
+                3,
+                3
             ]
         }
     ]

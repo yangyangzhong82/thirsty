@@ -2,18 +2,18 @@
     "format_version": "1.21.90",
     "minecraft:item": {
         "description": {
-            "identifier": "thirsty:purified_water_bottle",
+            "identifier": "thirsty:acceptable_waterskin_2",
             "menu_category": {
                 "category": "equipment"
             }
         },
         "components": {
             "minecraft:display_name": {
-                "value": "item.thirsty:purified_water_bottle.name"
+                "value": "item.thirsty:acceptable_waterskin_2.name"
             },
             "minecraft:icon": {
                 "textures": {
-                    "default": "thirsty_purified_water_bottle"
+                    "default": "thirsty_acceptable_waterskin_2"
                 }
             },
             "minecraft:max_stack_size": 1,
@@ -26,7 +26,7 @@
                 "nutrition": 0,
                 "saturation_modifier": 0,
                 "can_always_eat": true,
-                "using_converts_to": "minecraft:glass_bottle"
+                "using_converts_to": "thirsty:acceptable_waterskin_1"
             }
         }
     }

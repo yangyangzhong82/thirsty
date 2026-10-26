@@ -1,0 +1,23 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "thirsty:waterskin",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.thirsty:waterskin.name"
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "thirsty_waterskin"
+                }
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:liquid_clipped": true
+        }
+    }
+}

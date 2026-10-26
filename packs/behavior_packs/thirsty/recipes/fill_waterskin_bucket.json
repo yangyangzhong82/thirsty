@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "thirsty:fill_waterskin_bucket"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "thirsty:waterskin"
+            },
+            {
+                "item": "minecraft:water_bucket"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "thirsty:waterskin"
+            }
+        ],
+        "result": [
+            {
+                "item": "thirsty:dirty_waterskin_2"
+            },
+            {
+                "item": "minecraft:bucket"
+            }
+        ]
+    }
+}

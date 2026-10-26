@@ -1,0 +1,15 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "thirsty:purify_slightly_dirty_water_bottle"
+        },
+        "tags": [
+            "furnace",
+            "campfire",
+            "soul_campfire"
+        ],
+        "input": "thirsty:slightly_dirty_water_bottle",
+        "output": "thirsty:acceptable_water_bottle"
+    }
+}

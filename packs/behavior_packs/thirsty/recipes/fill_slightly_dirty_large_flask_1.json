@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "thirsty:fill_slightly_dirty_large_flask_1"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "thirsty:large_flask"
+            },
+            {
+                "item": "thirsty:slightly_dirty_water_bottle"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "thirsty:large_flask"
+            }
+        ],
+        "result": [
+            {
+                "item": "thirsty:slightly_dirty_large_flask_1"
+            },
+            {
+                "item": "minecraft:glass_bottle"
+            }
+        ]
+    }
+}

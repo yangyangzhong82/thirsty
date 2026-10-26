@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "thirsty:fill_slightly_dirty_flask_4"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "thirsty:slightly_dirty_flask_3"
+            },
+            {
+                "item": "thirsty:slightly_dirty_water_bottle"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "thirsty:flask"
+            }
+        ],
+        "result": [
+            {
+                "item": "thirsty:slightly_dirty_flask_4"
+            },
+            {
+                "item": "minecraft:glass_bottle"
+            }
+        ]
+    }
+}

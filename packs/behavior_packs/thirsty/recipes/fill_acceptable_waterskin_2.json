@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "thirsty:fill_acceptable_waterskin_2"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "thirsty:acceptable_waterskin_1"
+            },
+            {
+                "item": "thirsty:acceptable_water_bottle"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "thirsty:waterskin"
+            }
+        ],
+        "result": [
+            {
+                "item": "thirsty:acceptable_waterskin_2"
+            },
+            {
+                "item": "minecraft:glass_bottle"
+            }
+        ]
+    }
+}

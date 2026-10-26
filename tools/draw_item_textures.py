@@ -2,12 +2,21 @@
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
+from generate_items import QUALITIES
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "packs/resource_packs/thirsty/textures/items"
 
 
-def flask(sips=0, dirty=False):
+WATER_COLORS = {
+    "dirty": ("#b9a26c", "#8c713c", "#594929"),
+    "slightly_dirty": ("#c4d592", "#8ca65c", "#587740"),
+    "acceptable": ("#b1e9ed", "#68b1c0", "#3c7d98"),
+    "clean": ("#9bfff1", "#32bad0", "#227897"),
+}
+
+
+def flask(sips=0, quality="clean"):
     image = Image.new("RGBA", (32, 32))
     d = ImageDraw.Draw(image)
 
@@ -52,13 +61,13 @@ def flask(sips=0, dirty=False):
     d.rectangle((14, 15, 20, 25), fill="#344f5c")
     if sips:
         top = 25 - sips * 2
-        colors = ("#bac76d", "#7e9c49", "#536e3c") if dirty else ("#9bfff1", "#32bad0", "#227897")
+        colors = WATER_COLORS[quality]
         d.rectangle((14, top, 20, 25), fill=colors[1])
         d.rectangle((13, max(16, top + 1), 21, 24), fill=colors[1])
         d.line((14, top, 20, top), fill=colors[0])
         d.line((14, 25, 20, 25), fill=colors[2])
         d.line((20, top + 1, 20, 24), fill=colors[2])
-        if dirty:
+        if quality in ("dirty", "slightly_dirty"):
             for x, y in ((15, 24), (18, 23), (16, 21), (19, 19)):
                 if y > top:
                     d.point((x, y), fill="#bbc080")
@@ -82,76 +91,95 @@ def flask(sips=0, dirty=False):
     return image
 
 
-def purified_bottle():
+def water_bottle(quality="clean"):
+    # Use Mojang's original 16px bottle, not a newly drawn silhouette.
+    assets = ROOT / "tools/assets/vanilla"
+    image = Image.open(assets / "potion_bottle_drinkable.png").convert("RGBA")
+    if quality == "clean":
+        return image
+    mask = Image.open(assets / "potion_overlay.png").convert("RGBA")
+    color = WATER_COLORS[quality][1].lstrip("#")
+    target = tuple(int(color[i:i + 2], 16) for i in (0, 2, 4))
+    for y in range(image.height):
+        for x in range(image.width):
+            r, g, b, alpha = image.getpixel((x, y))
+            # Recolor blue liquid only; keep the glass outline and highlights intact.
+            if mask.getpixel((x, y))[3] and b > r * 2.5:
+                image.putpixel((x, y), tuple(round(v * b / 196) for v in target) + (alpha,))
+    return image
+
+
+def tint(image, multiply):
+    """Recolor a sprite's body while keeping its alpha and shading."""
+    pixels = image.load()
+    for y in range(image.height):
+        for x in range(image.width):
+            r, g, b, a = pixels[x, y]
+            if a:
+                pixels[x, y] = tuple(min(255, int(v * m)) for v, m in zip((r, g, b), multiply)) + (a,)
+    return image
+
+
+def scaled_flask(sips, capacity, quality, multiply):
+    # Water height follows the 4-sip window, so other capacities map onto it.
+    level = round(sips * 4 / capacity) if sips else 0
+    if sips and not level:
+        level = 1
+    image = flask(level, quality)
+    return tint(image, multiply) if multiply else image
+
+
+def charcoal_filter():
     image = Image.new("RGBA", (32, 32))
     d = ImageDraw.Draw(image)
-    # Subtle blue glass body with shaped shoulders and a broad weighted base.
-    d.polygon([(12, 6), (20, 6), (20, 11), (22, 13), (24, 14), (26, 17),
-               (26, 26), (24, 29), (22, 30), (10, 30), (8, 29), (6, 26),
-               (6, 17), (8, 14), (10, 13), (12, 11)], fill="#294451")
-    d.polygon([(13, 7), (19, 7), (19, 12), (22, 14), (23, 15), (25, 18),
-               (25, 26), (23, 28), (21, 29), (11, 29), (9, 28), (7, 25),
-               (7, 18), (9, 15), (13, 12)], fill=(136, 204, 214, 145))
-    d.polygon([(13, 8), (15, 8), (15, 12), (11, 15), (9, 18), (9, 25),
-               (11, 27), (10, 28), (8, 26), (8, 18), (10, 15), (13, 12)], fill="#c6f3ec")
-    d.polygon([(9, 19), (12, 18), (17, 19), (22, 18), (24, 19), (24, 26),
-               (22, 28), (11, 28), (8, 25), (8, 20)], fill="#38afcf")
-    d.polygon([(20, 20), (24, 19), (24, 26), (22, 28), (11, 28), (10, 27),
-               (20, 27), (22, 25), (22, 21)], fill="#287baf")
-    d.line([(9, 19), (12, 18), (17, 19), (22, 18), (24, 19)], fill="#b3fff0")
-    d.line((9, 21, 9, 25), fill="#e0fff7")
-    d.line((10, 26, 12, 28), fill="#96ebec")
-    d.line((13, 29, 20, 29), fill="#b3dedc")
-    d.line((24, 21, 24, 25), fill="#70c4db")
-    d.line((23, 15, 24, 17), fill="#c6f9ee")
-    d.line((18, 8, 18, 11), fill="#8bb5c4")
-
-    # Purity seal: a luminous droplet on a small silver medallion.
-    d.polygon([(16, 20), (19, 22), (19, 25), (16, 27), (13, 25), (13, 22)], fill="#266781")
-    d.polygon([(16, 20), (18, 22), (18, 25), (16, 26), (14, 25), (14, 22)], fill="#d3f6dc")
-    d.polygon([(16, 21), (15, 23), (15, 24), (16, 25), (17, 24), (17, 23)], fill="#38b7d2")
-    d.point((15, 23), fill="#9afff1")
-    d.point((20, 21), fill="#b0faf2")
-    d.point((12, 23), fill="#76d9e6")
-
-    # Wrapped cork, metal lip, and a teal neck ribbon.
-    d.rectangle((11, 2, 21, 6), fill="#3a3031")
-    d.rectangle((12, 1, 20, 2), fill="#514335")
-    d.rectangle((12, 2, 20, 5), fill="#b3895f")
-    d.line((12, 2, 19, 2), fill="#f0d199")
-    d.rectangle((18, 3, 20, 5), fill="#8e6347")
-    for x, y in ((13, 4), (16, 3), (17, 5)):
-        d.point((x, y), fill="#74513d")
-    d.line((11, 6, 21, 6), fill="#dde1b4")
-    d.rectangle((12, 8, 20, 9), fill="#286673")
-    d.line((12, 8, 19, 8), fill="#63c9ba")
-    d.polygon([(19, 9), (22, 10), (23, 13), (21, 12)], fill="#3d9a9d")
+    d.rounded_rectangle((8, 6, 24, 27), radius=3, fill="#3b2a1e")
+    d.rectangle((9, 7, 23, 11), fill="#efe6cf")
+    d.rectangle((9, 12, 23, 19), fill="#2a2a2c")
+    for x, y in ((11, 14), (15, 16), (19, 13), (13, 18), (21, 17)):
+        d.point((x, y), fill="#5a5a60")
+    d.rectangle((9, 20, 23, 26), fill="#d9c58c")
+    for x, y in ((11, 22), (16, 24), (20, 21)):
+        d.point((x, y), fill="#b29b5e")
+    d.line((9, 7, 9, 25), fill="#7a5a3a")
     return image
+
+
+# id -> (capacity, color multiplier or None)
+CONTAINERS = {"waterskin": (2, (1.15, 0.85, 0.65)), "flask": (4, None), "large_flask": (8, (1.25, 0.8, 0.55))}
 
 
 def main():
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    sprites = {"flask": flask(), "purified_water_bottle": purified_bottle()}
-    for quality in ("clean", "dirty"):
-        for sips in range(1, 5):
-            sprites[f"{quality}_flask_{sips}"] = flask(sips, quality == "dirty")
+    sprites = {"charcoal_filter": charcoal_filter()}
+    for quality in ("dirty", "slightly_dirty", "acceptable"):
+        sprites[f"{quality}_water_bottle"] = water_bottle(quality)
+    for cid, (capacity, multiply) in CONTAINERS.items():
+        sprites[cid] = scaled_flask(0, capacity, "clean", multiply)
+        for quality in QUALITIES:
+            for sips in range(1, capacity + 1):
+                sprites[f"{quality}_{cid}_{sips}"] = scaled_flask(sips, capacity, quality, multiply)
     for name, sprite in sprites.items():
         sprite.save(OUTPUT / f"{name}.png")
 
-    # Nearest-neighbor preview at a useful size; original PNGs remain 32 x 32.
-    sheet = Image.new("RGB", (1000, 472), "#18212a")
+    # Include vanilla water in the preview only; it is not a generated custom item.
+    preview_sprites = {**sprites, "vanilla_water_bottle": water_bottle()}
+    # Nearest-neighbor preview at a useful size.
+    sheet = Image.new("RGB", (1000, 1180), "#18212a")
     d = ImageDraw.Draw(sheet)
-    layout = ["flask"] + [f"clean_flask_{n}" for n in range(1, 5)]
-    layout += ["purified_water_bottle"] + [f"dirty_flask_{n}" for n in range(1, 5)]
+    layout = ["waterskin", "flask", "large_flask", "charcoal_filter", "vanilla_water_bottle"]
+    for quality in QUALITIES:
+        bottle = "vanilla_water_bottle" if quality == "clean" else f"{quality}_water_bottle"
+        layout += [bottle] + [f"{quality}_flask_{n}" for n in range(1, 5)]
     font = ImageFont.load_default(size=14)
     for i, name in enumerate(layout):
         x, y = (i % 5) * 200, (i // 5) * 236
         d.rounded_rectangle((x + 5, y + 5, x + 194, y + 228), radius=8, fill="#25333e")
-        sprite = sprites[name].resize((192, 192), Image.Resampling.NEAREST)
+        sprite = preview_sprites[name].resize((192, 192), Image.Resampling.NEAREST)
         sheet.paste(sprite, (x + 4, y + 5), sprite)
         label = name.replace("_", " ").title()
-        if name == "purified_water_bottle":
-            label = "Purified Water Bottle"
+        label = label.replace("Slightly Dirty", "Slightly Dirty\n")
+        if name == "vanilla_water_bottle":
+            label = "Vanilla Water (Pure)"
         d.text((x + 100, y + 207), label, font=font, anchor="mm", fill="#d0e6e5")
     preview = ROOT / "build/texture_preview.png"
     preview.parent.mkdir(exist_ok=True)

@@ -1,0 +1,33 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "thirsty:fill_clean_large_flask_6"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "thirsty:clean_large_flask_5"
+            },
+            {
+                "item": "minecraft:potion",
+                "data": 0
+            }
+        ],
+        "unlock": [
+            {
+                "item": "thirsty:large_flask"
+            }
+        ],
+        "result": [
+            {
+                "item": "thirsty:clean_large_flask_6"
+            },
+            {
+                "item": "minecraft:glass_bottle"
+            }
+        ]
+    }
+}

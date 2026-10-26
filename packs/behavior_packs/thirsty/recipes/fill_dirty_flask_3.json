@@ -12,8 +12,7 @@
                 "item": "thirsty:dirty_flask_2"
             },
             {
-                "item": "minecraft:potion",
-                "data": 0
+                "item": "thirsty:dirty_water_bottle"
             }
         ],
         "unlock": [

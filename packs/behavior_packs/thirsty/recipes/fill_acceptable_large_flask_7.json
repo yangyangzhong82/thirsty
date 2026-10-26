@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "thirsty:fill_acceptable_large_flask_7"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "thirsty:acceptable_large_flask_6"
+            },
+            {
+                "item": "thirsty:acceptable_water_bottle"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "thirsty:large_flask"
+            }
+        ],
+        "result": [
+            {
+                "item": "thirsty:acceptable_large_flask_7"
+            },
+            {
+                "item": "minecraft:glass_bottle"
+            }
+        ]
+    }
+}

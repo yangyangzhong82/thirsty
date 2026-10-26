@@ -1,0 +1,33 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "thirsty:fill_clean_waterskin_2"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "thirsty:clean_waterskin_1"
+            },
+            {
+                "item": "minecraft:potion",
+                "data": 0
+            }
+        ],
+        "unlock": [
+            {
+                "item": "thirsty:waterskin"
+            }
+        ],
+        "result": [
+            {
+                "item": "thirsty:clean_waterskin_2"
+            },
+            {
+                "item": "minecraft:glass_bottle"
+            }
+        ]
+    }
+}

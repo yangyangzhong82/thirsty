@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "thirsty:dirty_large_flask_3",
+            "menu_category": {
+                "category": "none"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.thirsty:dirty_large_flask_3.name"
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "thirsty_dirty_large_flask_3"
+                }
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:use_animation": "drink",
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6,
+                "movement_modifier": 0.35
+            },
+            "minecraft:food": {
+                "nutrition": 0,
+                "saturation_modifier": 0,
+                "can_always_eat": true,
+                "using_converts_to": "thirsty:dirty_large_flask_2"
+            }
+        }
+    }
+}

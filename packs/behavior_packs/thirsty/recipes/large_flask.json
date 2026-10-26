@@ -1,0 +1,33 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "thirsty:large_flask"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "CCC",
+            "CFC",
+            "CCC"
+        ],
+        "key": {
+            "C": {
+                "item": "minecraft:copper_ingot"
+            },
+            "F": {
+                "item": "thirsty:flask"
+            }
+        },
+        "unlock": [
+            {
+                "item": "thirsty:flask"
+            }
+        ],
+        "result": {
+            "item": "thirsty:large_flask",
+            "count": 1
+        }
+    }
+}

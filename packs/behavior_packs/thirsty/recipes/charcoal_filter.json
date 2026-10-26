@@ -1,0 +1,36 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "thirsty:charcoal_filter"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "P",
+            "C",
+            "S"
+        ],
+        "key": {
+            "P": {
+                "item": "minecraft:paper"
+            },
+            "C": {
+                "item": "minecraft:charcoal"
+            },
+            "S": {
+                "item": "minecraft:sand"
+            }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:charcoal"
+            }
+        ],
+        "result": {
+            "item": "thirsty:charcoal_filter",
+            "count": 2
+        }
+    }
+}

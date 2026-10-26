@@ -1,0 +1,22 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "thirsty:charcoal_filter",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.thirsty:charcoal_filter.name"
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "thirsty_charcoal_filter"
+                }
+            },
+            "minecraft:max_stack_size": 16
+        }
+    }
+}

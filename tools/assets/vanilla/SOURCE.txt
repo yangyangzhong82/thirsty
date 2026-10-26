@@ -1,0 +1,4 @@
+Vanilla Minecraft Bedrock item textures from Mojang/bedrock-samples.
+Retrieved 2026-10-26.
+https://raw.githubusercontent.com/Mojang/bedrock-samples/main/resource_pack/textures/items/potion_bottle_drinkable.png
+https://raw.githubusercontent.com/Mojang/bedrock-samples/main/resource_pack/textures/items/potion_overlay.png

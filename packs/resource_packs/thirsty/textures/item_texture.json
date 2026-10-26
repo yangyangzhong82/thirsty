@@ -2,11 +2,47 @@
     "resource_pack_name": "thirsty",
     "texture_name": "atlas.items",
     "texture_data": {
+        "thirsty_dirty_water_bottle": {
+            "textures": "textures/items/dirty_water_bottle"
+        },
+        "thirsty_slightly_dirty_water_bottle": {
+            "textures": "textures/items/slightly_dirty_water_bottle"
+        },
+        "thirsty_acceptable_water_bottle": {
+            "textures": "textures/items/acceptable_water_bottle"
+        },
+        "thirsty_charcoal_filter": {
+            "textures": "textures/items/charcoal_filter"
+        },
+        "thirsty_waterskin": {
+            "textures": "textures/items/waterskin"
+        },
+        "thirsty_dirty_waterskin_1": {
+            "textures": "textures/items/dirty_waterskin_1"
+        },
+        "thirsty_dirty_waterskin_2": {
+            "textures": "textures/items/dirty_waterskin_2"
+        },
+        "thirsty_slightly_dirty_waterskin_1": {
+            "textures": "textures/items/slightly_dirty_waterskin_1"
+        },
+        "thirsty_slightly_dirty_waterskin_2": {
+            "textures": "textures/items/slightly_dirty_waterskin_2"
+        },
+        "thirsty_acceptable_waterskin_1": {
+            "textures": "textures/items/acceptable_waterskin_1"
+        },
+        "thirsty_acceptable_waterskin_2": {
+            "textures": "textures/items/acceptable_waterskin_2"
+        },
+        "thirsty_clean_waterskin_1": {
+            "textures": "textures/items/clean_waterskin_1"
+        },
+        "thirsty_clean_waterskin_2": {
+            "textures": "textures/items/clean_waterskin_2"
+        },
         "thirsty_flask": {
             "textures": "textures/items/flask"
-        },
-        "thirsty_purified_water_bottle": {
-            "textures": "textures/items/purified_water_bottle"
         },
         "thirsty_dirty_flask_1": {
             "textures": "textures/items/dirty_flask_1"
@@ -20,6 +56,30 @@
         "thirsty_dirty_flask_4": {
             "textures": "textures/items/dirty_flask_4"
         },
+        "thirsty_slightly_dirty_flask_1": {
+            "textures": "textures/items/slightly_dirty_flask_1"
+        },
+        "thirsty_slightly_dirty_flask_2": {
+            "textures": "textures/items/slightly_dirty_flask_2"
+        },
+        "thirsty_slightly_dirty_flask_3": {
+            "textures": "textures/items/slightly_dirty_flask_3"
+        },
+        "thirsty_slightly_dirty_flask_4": {
+            "textures": "textures/items/slightly_dirty_flask_4"
+        },
+        "thirsty_acceptable_flask_1": {
+            "textures": "textures/items/acceptable_flask_1"
+        },
+        "thirsty_acceptable_flask_2": {
+            "textures": "textures/items/acceptable_flask_2"
+        },
+        "thirsty_acceptable_flask_3": {
+            "textures": "textures/items/acceptable_flask_3"
+        },
+        "thirsty_acceptable_flask_4": {
+            "textures": "textures/items/acceptable_flask_4"
+        },
         "thirsty_clean_flask_1": {
             "textures": "textures/items/clean_flask_1"
         },
@@ -31,6 +91,105 @@
         },
         "thirsty_clean_flask_4": {
             "textures": "textures/items/clean_flask_4"
+        },
+        "thirsty_large_flask": {
+            "textures": "textures/items/large_flask"
+        },
+        "thirsty_dirty_large_flask_1": {
+            "textures": "textures/items/dirty_large_flask_1"
+        },
+        "thirsty_dirty_large_flask_2": {
+            "textures": "textures/items/dirty_large_flask_2"
+        },
+        "thirsty_dirty_large_flask_3": {
+            "textures": "textures/items/dirty_large_flask_3"
+        },
+        "thirsty_dirty_large_flask_4": {
+            "textures": "textures/items/dirty_large_flask_4"
+        },
+        "thirsty_dirty_large_flask_5": {
+            "textures": "textures/items/dirty_large_flask_5"
+        },
+        "thirsty_dirty_large_flask_6": {
+            "textures": "textures/items/dirty_large_flask_6"
+        },
+        "thirsty_dirty_large_flask_7": {
+            "textures": "textures/items/dirty_large_flask_7"
+        },
+        "thirsty_dirty_large_flask_8": {
+            "textures": "textures/items/dirty_large_flask_8"
+        },
+        "thirsty_slightly_dirty_large_flask_1": {
+            "textures": "textures/items/slightly_dirty_large_flask_1"
+        },
+        "thirsty_slightly_dirty_large_flask_2": {
+            "textures": "textures/items/slightly_dirty_large_flask_2"
+        },
+        "thirsty_slightly_dirty_large_flask_3": {
+            "textures": "textures/items/slightly_dirty_large_flask_3"
+        },
+        "thirsty_slightly_dirty_large_flask_4": {
+            "textures": "textures/items/slightly_dirty_large_flask_4"
+        },
+        "thirsty_slightly_dirty_large_flask_5": {
+            "textures": "textures/items/slightly_dirty_large_flask_5"
+        },
+        "thirsty_slightly_dirty_large_flask_6": {
+            "textures": "textures/items/slightly_dirty_large_flask_6"
+        },
+        "thirsty_slightly_dirty_large_flask_7": {
+            "textures": "textures/items/slightly_dirty_large_flask_7"
+        },
+        "thirsty_slightly_dirty_large_flask_8": {
+            "textures": "textures/items/slightly_dirty_large_flask_8"
+        },
+        "thirsty_acceptable_large_flask_1": {
+            "textures": "textures/items/acceptable_large_flask_1"
+        },
+        "thirsty_acceptable_large_flask_2": {
+            "textures": "textures/items/acceptable_large_flask_2"
+        },
+        "thirsty_acceptable_large_flask_3": {
+            "textures": "textures/items/acceptable_large_flask_3"
+        },
+        "thirsty_acceptable_large_flask_4": {
+            "textures": "textures/items/acceptable_large_flask_4"
+        },
+        "thirsty_acceptable_large_flask_5": {
+            "textures": "textures/items/acceptable_large_flask_5"
+        },
+        "thirsty_acceptable_large_flask_6": {
+            "textures": "textures/items/acceptable_large_flask_6"
+        },
+        "thirsty_acceptable_large_flask_7": {
+            "textures": "textures/items/acceptable_large_flask_7"
+        },
+        "thirsty_acceptable_large_flask_8": {
+            "textures": "textures/items/acceptable_large_flask_8"
+        },
+        "thirsty_clean_large_flask_1": {
+            "textures": "textures/items/clean_large_flask_1"
+        },
+        "thirsty_clean_large_flask_2": {
+            "textures": "textures/items/clean_large_flask_2"
+        },
+        "thirsty_clean_large_flask_3": {
+            "textures": "textures/items/clean_large_flask_3"
+        },
+        "thirsty_clean_large_flask_4": {
+            "textures": "textures/items/clean_large_flask_4"
+        },
+        "thirsty_clean_large_flask_5": {
+            "textures": "textures/items/clean_large_flask_5"
+        },
+        "thirsty_clean_large_flask_6": {
+            "textures": "textures/items/clean_large_flask_6"
+        },
+        "thirsty_clean_large_flask_7": {
+            "textures": "textures/items/clean_large_flask_7"
+        },
+        "thirsty_clean_large_flask_8": {
+            "textures": "textures/items/clean_large_flask_8"
         }
     }
 }

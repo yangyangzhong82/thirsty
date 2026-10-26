@@ -12,7 +12,8 @@
                 "item": "thirsty:flask"
             },
             {
-                "item": "thirsty:purified_water_bottle"
+                "item": "minecraft:potion",
+                "data": 0
             }
         ],
         "unlock": [
