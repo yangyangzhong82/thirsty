@@ -1,35 +1,32 @@
 {
   "format_version": 3,
   "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
-  "tooth": "github.com/LiteLDev/levilamina-mod-template",
-  "version": "0.0.0",
+  "tooth": "github.com/yangyangzhong82/thirsty",
+  "version": "0.3.0",
   "info": {
-    "name": "My Mod",
-    "description": "Description of my mod",
-    "tags": [
-      "platform:levilamina",
-      "type:mod"
-    ],
-    "avatar_url": "https://example.com/my-mod/avatar.png"
+    "name": "Thirsty 口渴模组",
+    "description": "为生存和冒险模式加入口渴值、水袋与水壶",
+    "tags": ["platform:levilamina", "type:mod"],
+    "avatar_url": "https://github.com/yangyangzhong82/thirsty/v0.3.0/icon.png"
   },
   "variants": [
     {
       "label": "",
       "platform": "win-x64",
       "dependencies": {
-        "github.com/LiteLDev/LeviLamina": "26.20.*"
+        "github.com/LiteLDev/LeviLamina": "26.51.*"
       },
       "assets": [
         {
           "type": "zip",
           "urls": [
-            "https://{{tooth}}/releases/download/v{{version}}/levilamina-mod-template-server-windows-x64.zip"
+            "https://{{tooth}}/releases/download/v{{version}}/thirsty-server-windows-x64.zip"
           ],
           "placements": [
             {
               "type": "dir",
-              "src": "my-mod/",
-              "dest": "plugins/my-mod/"
+              "src": "thirsty/",
+              "dest": "plugins/thirsty/"
             }
           ]
         }
@@ -51,19 +48,19 @@
       "label": "client",
       "platform": "win-x64",
       "dependencies": {
-        "github.com/LiteLDev/LeviLamina#client": "26.20.*"
+        "github.com/LiteLDev/LeviLamina#client": "26.51.*"
       },
       "assets": [
         {
           "type": "zip",
           "urls": [
-            "https://{{tooth}}/releases/download/v{{version}}/levilamina-mod-template-client-windows-x64.zip"
+            "https://{{tooth}}/releases/download/v{{version}}/thirsty-client-windows-x64.zip"
           ],
           "placements": [
             {
               "type": "dir",
-              "src": "my-mod/",
-              "dest": "mods/my-mod/"
+              "src": "thirsty/",
+              "dest": "mods/thirsty/"
             }
           ]
         }

@@ -26,6 +26,20 @@ bool MyMod::load() {
     if (!ll::config::loadConfig(mConfig, path)) {
         ll::config::saveConfig(mConfig, path);
     }
+    // 为新配置和尚未添加说明的旧配置补上中文说明，保留原有配置值。
+    if (auto content = ll::file_utils::readFile(path)) {
+        auto data = nlohmann::ordered_json::parse(*content, nullptr, true, true);
+        if (!data.contains("_comment_version")) {
+            auto annotated = nlohmann::ordered_json::object();
+            for (auto const& [key, value] : data.items()) {
+                if (auto it = thirsty::ThirstConfigComments.find(key); it != thirsty::ThirstConfigComments.end()) {
+                    annotated["_comment_" + key] = it->second;
+                }
+                annotated[key] = value;
+            }
+            ll::file_utils::writeFile(path, annotated.dump(4));
+        }
+    }
     auto clampCost = [](double& value, double fallback) {
         value = std::isfinite(value) ? std::clamp(value, 0.0, static_cast<double>(thirsty::MaxThirst)) : fallback;
     };

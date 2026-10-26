@@ -1,6 +1,12 @@
-# Changelog
+# 更新记录
 
-All notable changes to this project will be documented in this file.
+## [0.3.0] - 2026-10-26
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+首个公开发布版本，需要 Windows x64 和 LeviLamina 26.51.5。
+
+- 生存、冒险模式增加口渴值和水滴条，口渴状态随存档保存。
+- 支持水袋、水壶、铜水壶，以及四种水质和逐级净化。
+- 支持雨中接水、空手饮水、加热炼药锅取水和食物补水。
+- 不同环境和活动影响口渴消耗，缺水会导致挖掘疲劳和掉血。
+- 同时提供客户端和服务端版本，物品包自动加载。
+- 配置文件附带中文说明，可调整消耗、补水、负面效果和水滴条位置。
