@@ -10,6 +10,8 @@ namespace thirsty {
 // Both builds register the same packet name and wire format.
 class ThirstPacket final : public ll::network::PacketBase<ThirstPacket> {
 public:
+    static constexpr auto Side = ll::network::PacketSide::Client;
+
     uint64 actorId = 0;
     uint   value   = 2000; // Hundredths of a thirst point.
     bool   visible = false;
@@ -23,6 +25,8 @@ public:
 // The sender is resolved from the connection; the server checks the water and cooldown.
 class HandDrinkPacket final : public ll::network::PacketBase<HandDrinkPacket> {
 public:
+    static constexpr auto Side = ll::network::PacketSide::Server;
+
     void                  write(BinaryStream& stream) const override;
     Bedrock::Result<void> read(ReadOnlyBinaryStream& stream) override;
 };

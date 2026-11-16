@@ -47,7 +47,12 @@ std::mutex hudMutex;
 std::unordered_map<std::uint64_t, HudState> hudStates;
 
 class ThirstHandler final : public ll::network::IPacketHandler {
-    void handle(NetworkIdentifier const&, NetEventCallback&, ll::network::Packet const& packet) const override {
+    void handle(
+        NetworkIdentifier const&,
+        NetEventCallback&,
+        ll::network::PacketSide,
+        ll::network::Packet const& packet
+    ) const override {
         updateThirstHud(static_cast<ThirstPacket const&>(packet));
     }
 };
@@ -228,7 +233,9 @@ void forgetThirstHud(std::uint64_t actorId) {
 
 void enableThirstHud() {
     ThirstPacket packet;
-    ll::network::PacketRegistrar::getInstance().registerHandler(packet.getName(), packet.getRuntimeId(), packetHandler);
+    ll::network::PacketRegistrar::getInstance().registerHandler(
+        packet.getName(), packet.getRuntimeId(), packetHandler, ThirstPacket::Side
+    );
     ThirstHudHook::hook();
     WaterTooltipHook::hook();
     WaterBottleTooltipHook::hook();
@@ -241,7 +248,9 @@ void disableThirstHud() {
     WaterBottleTooltipHook::unhook();
     ThirstHudHook::unhook();
     ThirstPacket packet;
-    ll::network::PacketRegistrar::getInstance().registerHandler(packet.getName(), packet.getRuntimeId(), std::nullopt);
+    ll::network::PacketRegistrar::getInstance().registerHandler(
+        packet.getName(), packet.getRuntimeId(), std::nullopt, ThirstPacket::Side
+    );
     std::lock_guard lock(hudMutex);
     hudStates.clear();
 }

@@ -14,7 +14,7 @@
       "label": "",
       "platform": "win-x64",
       "dependencies": {
-        "github.com/LiteLDev/LeviLamina": "26.51.*"
+        "github.com/LiteLDev/LeviLamina": "26.60.*"
       },
       "assets": [
         {
@@ -26,7 +26,7 @@
             {
               "type": "dir",
               "src": "thirsty/",
-              "dest": "plugins/thirsty/"
+              "dest": " mods/thirsty/"
             }
           ]
         }
@@ -48,7 +48,7 @@
       "label": "client",
       "platform": "win-x64",
       "dependencies": {
-        "github.com/LiteLDev/LeviLamina#client": "26.51.*"
+        "github.com/LiteLDev/LeviLamina#client": "26.60.*"
       },
       "assets": [
         {

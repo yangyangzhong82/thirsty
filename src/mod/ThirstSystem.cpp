@@ -296,7 +296,12 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 class HandDrinkHandler final : public ll::network::IPacketHandler {
-    void handle(NetworkIdentifier const& netId, NetEventCallback&, ll::network::Packet const& packet) const override {
+    void handle(
+        NetworkIdentifier const& netId,
+        NetEventCallback&,
+        ll::network::PacketSide,
+        ll::network::Packet const& packet
+    ) const override {
         auto handler = ll::service::getServerNetworkHandler();
         if (!handler) return;
         auto* player = handler->_getServerPlayer(netId, packet.mSenderSubId);
@@ -698,7 +703,9 @@ bool isLookingAtWater(Player& player) { return waterTarget(player).has_value(); 
 void enableThirstSystem() {
     ThirstHooks::hook();
     HandDrinkPacket packet;
-    ll::network::PacketRegistrar::getInstance().registerHandler(packet.getName(), packet.getRuntimeId(), handDrinkHandler);
+    ll::network::PacketRegistrar::getInstance().registerHandler(
+        packet.getName(), packet.getRuntimeId(), handDrinkHandler, HandDrinkPacket::Side
+    );
     auto& bus = ll::event::EventBus::getInstance();
     tickListener = bus.emplaceListener<ll::event::ServerLevelTickEvent>([](auto& event) {
         event.level().forEachPlayer([](Player& player) {
@@ -721,7 +728,9 @@ void enableThirstSystem() {
 
 void disableThirstSystem() {
     HandDrinkPacket packet;
-    ll::network::PacketRegistrar::getInstance().registerHandler(packet.getName(), packet.getRuntimeId(), std::nullopt);
+    ll::network::PacketRegistrar::getInstance().registerHandler(
+        packet.getName(), packet.getRuntimeId(), std::nullopt, HandDrinkPacket::Side
+    );
     auto& bus = ll::event::EventBus::getInstance();
     bus.removeListener(tickListener);
     bus.removeListener(respawnListener);

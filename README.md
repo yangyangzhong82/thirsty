@@ -6,7 +6,7 @@ Thirsty 给生存和冒险模式加了一条口渴值。你需要找水、装水
 
 ## 安装
 
-本模组需要 LeviLamina 26.51.5，支持 Windows x64。
+本模组需要 LeviLamina 26.60.5，支持 Windows x64。
 
 从 [发布页面](https://github.com/yangyangzhong82/thirsty/releases) 下载对应版本的压缩包，解压后安装：
 
